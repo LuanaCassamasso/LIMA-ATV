@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <label for="produtos">Selecione o produto:</label>
+      <select id="produtos" aria-label="selecione o produto">
+        <option><a href="#">Notebook</a></option>
+        <option><a href="#">Celular</a></option>
+        <option><a href="#">Tablet</a></option>
+      </select>
+      <p id="descricao-produto">Descriçao do produto:<span id="descProduto"</p>
+    <style>
+        [aria]
+        #menuButton[aria-expanded="true"]::after{
+            content: "🔼";    
+        }
+        #menuButton[aria-expanded="false"]::after{
+            content: "🔽"; 
+        }
+        #menu{
+            display: none;
+        }#menu[aria-hidden="false"]{
+            display: block;
+        }
+    </style>
+    <script>
+        menuButton.addEventListener("change", () =>{
+            const descProduto = descProduto.value;
+            const descricaoProduto = document.getElementById("descricao-produto");
+            descricaoProduto = descricaoProduto[descProduto];
+        })
+    </script>
+</body>
+</html>

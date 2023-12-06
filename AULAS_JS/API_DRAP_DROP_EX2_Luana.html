@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de Drag and Drop</title>
+  <style>
+    /* Estilo para os elementos que podem ser arrastados */
+    .draggable {
+      width: 50px;
+      height: 50px;
+      background-color: #ac24ce;
+      cursor: move;
+    }
+
+    /* Estilo para a área de drop */
+    .dropzone {
+      width: 50px;
+      height: 200px;
+      border: 2px dashed #bebebe;
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    // Função chamada quando inicia o arraste
+    function dragStart(event) {
+      event.dataTransfer.setData("text/plain", event.target.id);
+    }
+
+    // Função chamada quando um elemento é solto na área de drop
+    function drop(event) {
+      event.preventDefault();
+
+      var data = event.dataTransfer.getData("text/plain");
+      var draggedElement = document.getElementById(data);
+
+      // Cria um clone do elemento arrastado
+      var clonedElement = draggedElement.cloneNode(true);
+
+      // Remove o atributo "id" do clone para evitar IDs duplicados
+      clonedElement.removeAttribute("id");
+
+      // Adiciona o clone à área de drop
+      event.target.appendChild(clonedElement);
+    }
+
+    // Função chamada para permitir a soltura na área de drop
+    function allowDrop(event) {
+      event.preventDefault();
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Elemento arrastável -->
+  <div id="draggableElement" class="draggable" draggable="true" ondragstart="dragStart(event)"></div>
+  
+
+  <!-- Área de drop -->
+  <div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+</body>
+</html>

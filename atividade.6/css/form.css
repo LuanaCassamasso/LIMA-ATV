@@ -1,0 +1,56 @@
+*{
+    padding: 0;  
+    margin: 0;
+    box-sizing: 0;
+    border: 0;
+  }
+/*cabeçalho*/
+#cabecalho{
+    background-color: orange;
+    padding: 8px;
+    height: 100px;
+    width: 98,5%;
+    border-bottom: solid 10px rgb(201, 136, 15);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+.start{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.end{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+/*algm problema*/
+.pesquisa{
+    border-radius: 30px;
+    width: 450px;
+    height: 350px;
+    padding: 2px;
+    text-align: center;
+    background-color: rgba(142, 142, 142, 0.259);
+    margin-left: 300px;
+    margin-top: 40px;
+}
+.titulo{
+    margin-left: 350px;
+    margin-top: 25px;
+    font-size: 50px;
+    
+}
+#meio{
+    display: flex;
+    flex-direction: row;
+}
+.escolha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 80px;
+}

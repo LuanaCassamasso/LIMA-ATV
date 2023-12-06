@@ -1,0 +1,81 @@
+*{
+    padding: 0;  
+    margin: 0;
+    box-sizing: 0;
+    border: 0;
+  }
+/*cabeçalho*/
+#cabecalho{
+    background-color: orange;
+    padding: 8px;
+    height: 100px;
+    width: 98,5%;
+    border-bottom: solid 10px rgb(201, 136, 15);
+    display: flex;
+    justify-content: space-between;
+}
+.start{
+    width: 400px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-top: 2px;
+}
+.end{
+    width: 400px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+.titulo{
+    margin-left: 150px;
+    margin-top: 25px;
+}
+.sub{
+    margin-left: 75px;
+    margin-top: 25px;
+}
+.cfz{
+    margin-top: 20px;
+    margin-left: 50px;
+    height: 450px;
+    width: 500px;
+}
+#meio{
+    display: flex;
+    flex-direction: row;
+}
+.quadrado{
+    width: 350px;
+    height: 350px;
+    background-color: rgba(126, 126, 126, 0.479);
+    margin-left: 350px;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+}
+.espaço{
+    display: flex;
+    justify-content: space-between;
+}
+.num{
+    color: rgb(0, 0, 0);
+    background-color: rgba(126, 126, 126, 0.479);
+    height: 350px;
+    width: 78px;
+    font-size: 25px;
+}
+.class{
+    width: 120px;
+    margin-left: 75px;
+    margin-top: 25px;
+    height: 50px;
+    background-color: rgba(153, 153, 153, 0.479);
+    border-radius: 5px;
+}
+.esq{
+    height: 50px;
+    background-color: rgba(108, 108, 108, 0.711);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}

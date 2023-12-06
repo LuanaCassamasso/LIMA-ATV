@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#div1, #div2 {
+  float: left;
+  width: 150px;
+  height: 145px;
+  margin: 10px;
+  padding: 10px;
+  border: 4px solid rgb(218, 123, 46);
+}
+</style>
+<script>
+function permitirSoltar(ev) {
+  ev.preventDefault();
+}
+
+function arrastar(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function soltar(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+
+<h2>GATO</h2>
+<p>Arrasta e solta</p>
+
+<div id="div1" ondrop="soltar(event)" ondragover="permitirSoltar(event)">
+  <img src="IMG/kisspng-cat-kitten-drawing-5b000af6202ff1.9877335915267294621319.jpg" draggable="true" ondragstart="arrastar(event)" id="arrastar" width="141" height="141">
+</div>
+
+<div id="div2" ondrop="soltar(event)" ondragover="permitirSoltar(event)"></div>
+
+</body>
+</html>
+

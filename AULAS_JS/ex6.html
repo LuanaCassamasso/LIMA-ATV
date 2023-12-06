@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Digite seu CEP</p>
+    <form method="get" action="."> 
+    <label> CEP:
+    <input name="CEP" type="text" id="cep" value=""  size="10" maxlength="9" onblur="pesquisacep(this.value);">
+    </label> <br>
+    <label> Rua:
+    <input name="Rua" type="text" id="rua" value=""  size="70">
+    </label> <br>
+    <label> Bairro:
+    <input name="Bairro" type="text" id="bairro" value=""  size="70">
+    </label> <br>
+    <label> Cidade:
+    <input name="Cidade" type="text" id="cep" value=""  size="50">
+     </label> <br>
+    <label> Estado:
+        <input name="Estado" type="text" id="Estado" value=""  size="2">
+    </label> <br>
+</form>
+    <script>
+function limpa_form(){
+    document.getElementById('rua').value=("");
+    document.getElementById('bairro').value=("");
+    document.getElementById('cidade').value=("");
+    document.getElementById('uf').value=("");
+}
+function atualiza_campos(conteudo){
+    if(!("erro" in conteudo)){
+        document.getElementById('rua').value=(conteudo.logradouro)
+        document.getElementById('bairro').value=(conteudo.bairro)
+        document.getElementById('cidade').value=(conteudo.cidade)
+        document.getElementById('uf').value=(conteudo.uf)
+    }else{
+        limpa_form();
+        alert("CEP nao foi encontrado!");
+    }
+}
+function pesquisacep(valor){
+    //varialvel cep recebe apenas valores decimais(inteiros)
+var cep = valor.replace(/\D/g,'');
+//condiçoes de validacao 
+if(cep != ""){
+    var validacep = /^[0-9]{8}$/;
+    //valida o formato do CEP
+    if(validacep.test(cep)){
+    document.getElementById('rua').value="carregando";
+    document.getElementById('bairro').value="carregando";
+    document.getElementById('cidade').value="carregando";
+    document.getElementById('uf').value="carregando";
+    //criou no(elemento)
+    var elemento = document.createElement('script');
+    //adicionou info no elemento
+    elemento.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=atualiza_campos';
+    //insere script no documento e carrega  seu conteudo
+    document.body.appendChild(elemento);
+ }
+ else{
+    limpa_form();
+    alert("formato de cep invalido!");
+ }
+ }else{
+    limpa_form();
+ }
+}
+    </script>
+</body>
+</html>

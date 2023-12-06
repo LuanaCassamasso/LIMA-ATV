@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEP</title>
+</head>
+<body>
+ 
+  <h1>Consulta de CEP</h1>
+<label for="cep">CEP: </label>
+<input type="text" id="cepInput" placeholder="Digite o CEP">
+<button onclick="consultarCEP()">Consultar</button>
+ 
+  <h2>Resultado:</h2>
+<div id="resultado"></div>
+ 
+  <script>
+    function consultarCEP() {
+      document.getElementById('resultado').innerHTML = '';
+      var cep = document.getElementById('cepInput').value;
+      cep = cep.replace(/\D/g, '');
+      if (cep.length !== 8) {
+        alert('CEP inválido. Certifique-se de digitar apenas os números.');
+        return;
+      }
+      var url = 'https://viacep.com.br/ws/' + cep + '/json/';
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          if (data.erro) {
+            alert('CEP não encontrado.');
+          } else {
+            exibirResultado(data);
+          }
+        })
+        .catch(error => {
+          alert('Erro ao consultar o CEP. Tente novamente mais tarde.');
+          console.error('Erro na requisição:', error);
+        });
+    }
+    function exibirResultado(data) {
+      var resultadoHTML = `
+<p><strong>CEP:</strong> ${data.cep}</p>
+<p><strong>Logradouro:</strong> ${data.logradouro}</p>
+<p><strong>Bairro:</strong> ${data.bairro}</p>
+<p><strong>Cidade:</strong> ${data.localidade}</p>
+<p><strong>Estado:</strong> ${data.uf}</p>`;
+      document.getElementById('resultado').innerHTML = resultadoHTML;
+    }
+</script>
+ 
+</body>
+</html>

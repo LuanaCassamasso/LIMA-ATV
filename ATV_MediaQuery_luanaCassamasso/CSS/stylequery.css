@@ -1,0 +1,113 @@
+body{
+    background-color: red;
+    border: 2px solid black;
+}
+#numero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fundo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#adicionar{
+ justify-content: center;
+ display: flex;
+ align-items: center;
+ width: 120px;
+ height: 40px;
+ 
+ 
+}
+#subtrair{
+    justify-content: center;
+    display: flex;
+    align-items: center; 
+    width: 120px;
+    height: 40px;
+}
+img{
+    width: 900px;
+    height: 600px;
+}
+
+@media (min-width:576px) {
+    body{
+        background-color: aqua;
+    }
+      .fundo{
+width: 100vw;
+      }
+      img{
+        width: 300px;
+        height: 300px;
+        border: solid 10px rgb(255, 0, 157);
+      }
+    }
+@media (min-width:768px){
+    body{
+        background-color: rgb(60, 255, 0);
+    }
+      .fundo{
+width: 100vw;
+      }
+      img{
+        width: 350px;
+        height: 350px;
+        border: solid 10px red;
+      }
+    }
+    
+
+
+@media (min-width:992px){
+    .body{
+        background-color: rgb(0, 72, 114);
+    }
+      .fundo{
+width: 100vw;
+      }
+      img{
+        width: 400px;
+        height: 400px;
+        border: solid 10px rgb(229, 255, 0);
+      }
+    }
+@media (min-width:1200px){
+    body{
+        background-color: rgb(255, 174, 0);
+    }
+      .fundo{
+width: 100vw;
+      }
+      img{
+        width: 450px;
+        height: 450px;
+        border: solid 10px rgb(225, 0, 255);
+      }
+    }
+@media (min-width:1400px){
+    body{
+        background-color: rgb(4, 184, 255);
+    }
+      .fundo{
+width: 100vw;
+      }
+      img{
+        width: 500px;
+        height: 500px;
+        border: solid 10px rgb(187, 168, 168);
+      }
+    }
